@@ -138,7 +138,7 @@ Series::Series()
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
-void Series::Init(string symbol,ENUM_TIMEFRAMES timeframe)
+void Series::Init(string symbol, ENUM_TIMEFRAMES timeframe)
   {
    m_symbol = symbol;
    m_timeframe=timeframe;
