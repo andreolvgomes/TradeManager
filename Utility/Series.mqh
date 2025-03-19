@@ -29,12 +29,12 @@ public:
    long              TickVolume(int index, ENUM_TIMEFRAMES timeframe = WRONG_VALUE);
    datetime          Time(int index, ENUM_TIMEFRAMES timeframe = WRONG_VALUE);
    int               Amp(int index, ENUM_TIMEFRAMES timeframe = WRONG_VALUE);
-   double               LowAmp(int start, int end);
-   double               HighAmp(int start, int end);
+   double            DistanceBetweenLow(int start, int end);
+   double            DistanceBetweenHigh(int start, int end);
    ENUM_TIMEFRAMES   TimeFrame() {return m_timeframe;};
   };
 //--Price of the Close
-double Series::LowAmp(int start, int end)
+double Series::DistanceBetweenLow(int start, int end)
   {
    bool op1 = true;
    double amplitude=0;
@@ -57,7 +57,7 @@ double Series::LowAmp(int start, int end)
    return amplitude;
   }
 //--Price of the Close
-double Series::HighAmp(int start, int end)
+double Series::DistanceBetweenHigh(int start, int end)
   {
    bool op1 = true;
    double amplitude=0;
