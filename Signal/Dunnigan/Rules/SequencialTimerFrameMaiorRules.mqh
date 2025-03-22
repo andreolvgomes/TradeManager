@@ -8,21 +8,47 @@
 #property version   "1.00"
 
 #include <TradeManager\Signal\Dunnigan\Rules\RulesBase.mqh>
+#include <TradeManager\Signal\Dunnigan\ParamsConfig.mqh>
+#include <TradeManager\Utility\CandlePattern.mqh>
 
+//+------------------------------------------------------------------+
+//|                                                                  |
+//+------------------------------------------------------------------+
 class SequencialTimerFrameMaiorRules : public RulesBase
   {
+private:
+   ParamsConfig      m_params;
+   CandlePattern     m_candler_pattern_big;
+
+public:
+                     SequencialTimerFrameMaiorRules(ParamsConfig &params);
+
 public:
    bool              IsBuyValid();
    bool              IsSellValid();
   };
 //--
+SequencialTimerFrameMaiorRules::SequencialTimerFrameMaiorRules(ParamsConfig &params)
+  {
+   m_params  = &params;
+   m_candler_pattern_big.Init(Symbol(), m_params.m_perdiodMaior);
+  }
+//--
 bool SequencialTimerFrameMaiorRules::IsBuyValid()
   {
-   return true;
+   if(m_params.m_number_barras_maior == 0)
+      return true;
+   if(m_candler_pattern_big.SequencialDown(m_params.m_number_barras_maior, 1))
+      return true;
+   return false;
   }
 //--
 bool SequencialTimerFrameMaiorRules::IsSellValid()
   {
-   return true;
+   if(m_params.m_number_barras_maior == 0)
+      return true;
+   if(m_candler_pattern_big.SequencialUp(m_params.m_number_barras_maior, 1))
+      return true;
+   return false;
   }
 //+------------------------------------------------------------------+
