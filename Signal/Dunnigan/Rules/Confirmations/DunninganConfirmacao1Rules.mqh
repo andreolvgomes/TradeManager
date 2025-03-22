@@ -8,13 +8,13 @@
 #property version   "1.00"
 
 #include <TradeManager\Signal\Dunnigan\ParamsConfig.mqh>
-#include <TradeManager\Signal\Dunnigan\Rules\RulesBase.mqh>
+#include <TradeManager\Signal\Dunnigan\Rules\ConfirmationBase.mqh>
 #include <TradeManager\Signal\Dunnigan\SetupDunnigan.mqh>
 
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
-class DunninganConfirmacao1Rules : public RulesBase
+class DunninganConfirmacao1Rules : public ConfirmationBase
   {
 private:
    ParamsConfig      m_params;

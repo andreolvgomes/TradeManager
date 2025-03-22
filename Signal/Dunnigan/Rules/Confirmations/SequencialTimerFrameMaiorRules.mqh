@@ -7,14 +7,14 @@
 #property link      "https://www.mql5.com"
 #property version   "1.00"
 
-#include <TradeManager\Signal\Dunnigan\Rules\RulesBase.mqh>
+#include <TradeManager\Signal\Dunnigan\Rules\ConfirmationBase.mqh>
 #include <TradeManager\Signal\Dunnigan\ParamsConfig.mqh>
 #include <TradeManager\Utility\CandlePattern.mqh>
 
 //+------------------------------------------------------------------+
 //|                                                                  |
 //+------------------------------------------------------------------+
-class SequencialTimerFrameMaiorRules : public RulesBase
+class SequencialTimerFrameMaiorRules : public ConfirmationBase
   {
 private:
    ParamsConfig      m_params;
