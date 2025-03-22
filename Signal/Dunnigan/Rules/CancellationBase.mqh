@@ -8,6 +8,8 @@
 #property version   "1.00"
 
 #include <TradeManager\Utility\Series.mqh>
+#include <Trade\OrderInfo.mqh>
+#include <Trade\SymbolInfo.mqh>
 
 //+------------------------------------------------------------------+
 //|                                                                  |
@@ -17,13 +19,27 @@ class CancellationBase
 protected:
    string            m_message;
    Series            *m_series;
+   COrderInfo        m_order;
+   CSymbolInfo       *m_symbol;
 
 public:
    virtual bool      IsCancelBuy() { return false; }
    virtual bool      IsCancelSell() { return false; }
 
-   void              Init(Series *series) {m_series = series;};
+   void              Init(Series *series, COrderInfo &order);
+   void              SetSymbol(CSymbolInfo *symbol);
    bool              SetMessage(string message) {m_message = message; return false;}
    string            SetMessage() {return m_message;}
   };
 //--
+void CancellationBase::Init(Series *series,COrderInfo &order)
+  {
+   m_series = series;
+   m_order = &order;
+  }
+//+------------------------------------------------------------------+
+void CancellationBase::SetSymbol(CSymbolInfo *symbol)
+  {
+   m_symbol = symbol;
+  }
+//+------------------------------------------------------------------+

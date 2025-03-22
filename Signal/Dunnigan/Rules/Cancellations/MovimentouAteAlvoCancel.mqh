@@ -27,11 +27,25 @@ public:
 //--
 bool MovimentouAteAlvoCancel::IsCancelBuy()
   {
+   double tp = m_order.TakeProfit();
+   if(tp == 0)
+      return false;
+      
+   double ask = m_symbol.Ask();
+   if(ask >= tp)
+      return true;
    return false;
   }
-  //--
+//--
 bool MovimentouAteAlvoCancel::IsCancelSell()
   {
+   double tp = m_order.TakeProfit();
+   if(tp == 0)
+      return false;
+      
+   double bid = m_symbol.Bid();
+   if(bid <= tp)
+      return true;
    return false;
   }
 //+------------------------------------------------------------------+
