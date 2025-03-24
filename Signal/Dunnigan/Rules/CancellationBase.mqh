@@ -27,7 +27,7 @@ public:
    virtual bool      IsCancelSell() { return false; }
 
    void              Init(Series *series, COrderInfo &order);
-   void              SetSymbol(CSymbolInfo *symbol);
+   void              SetSymbol(CSymbolInfo *symbol) {m_symbol = symbol;}
    bool              SetMessage(string message) {m_message = message; return false;}
    string            SetMessage() {return m_message;}
   };
@@ -36,10 +36,5 @@ void CancellationBase::Init(Series *series,COrderInfo &order)
   {
    m_series = series;
    m_order = &order;
-  }
-//+------------------------------------------------------------------+
-void CancellationBase::SetSymbol(CSymbolInfo *symbol)
-  {
-   m_symbol = symbol;
   }
 //+------------------------------------------------------------------+
