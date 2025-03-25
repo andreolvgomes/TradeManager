@@ -15,6 +15,7 @@ class ParamsConfig
 public:
    int               m_number_barras;
    int               m_level_stoploss;
+   int               m_amplitude_alvos;
    int               m_number_barras_maior;
    int               m_stop_loss;
    bool              m_entryWithConfirmation;
@@ -28,6 +29,7 @@ public:
    void              SetNumber_barras(int number_barras) {m_number_barras = number_barras;}
    void              SetNumber_barras_maior(int number_barras_maior) {m_number_barras_maior = number_barras_maior;}
    void              SetLevel_stoploss(int level_stoploss) {m_level_stoploss = level_stoploss;}
+   void              SetAmplitudeAlvos(int amplitude_alvos) {m_amplitude_alvos = amplitude_alvos;}
    void              SetStopLoss(int stop_loss) {m_stop_loss = stop_loss;}
    void              SetEntryWithConfirmation(bool entryWithConfirmation) {m_entryWithConfirmation = entryWithConfirmation;}
    void              SetAnalisar1(bool analisar1) {m_analisar1 = analisar1;}
