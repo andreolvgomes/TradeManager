@@ -19,6 +19,7 @@ public:
    int               m_amplitude_alvos;
    int               m_number_barras_maior;
    int               m_stop_loss;
+   int               m_take_profit;
    bool              m_entryWithConfirmation;
    bool              m_analisar1;
    bool              m_analisar2;
@@ -30,6 +31,7 @@ public:
    void              SetNumber_barras(int number_barras) {m_number_barras = number_barras;}
    void              SetNumber_barras_maior(int number_barras_maior) {m_number_barras_maior = number_barras_maior;}
    void              SetLevel_stoploss(int level_stoploss) {m_level_stoploss = level_stoploss;}
+   void              SetTakeProfit(int value) {m_take_profit = value;}
    void              SetAmplitudeAlvos(int amplitude_alvos) {m_amplitude_alvos = amplitude_alvos;}
    void              SetStopLoss(int stop_loss) {m_stop_loss = stop_loss;}
    void              SetEntryWithConfirmation(bool entryWithConfirmation) {m_entryWithConfirmation = entryWithConfirmation;}
