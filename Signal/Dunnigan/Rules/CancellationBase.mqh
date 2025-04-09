@@ -25,11 +25,10 @@ protected:
 public:
    virtual bool      IsCancelBuy() { return false; }
    virtual bool      IsCancelSell() { return false; }
+   virtual string    Message() { return "Message default"; }
 
    void              Init(Series *series, COrderInfo &order);
    void              SetSymbol(CSymbolInfo *symbol) {m_symbol = symbol;}
-   bool              SetMessage(string message) {m_message = message; return false;}
-   string            SetMessage() {return m_message;}
   };
 //--
 void CancellationBase::Init(Series *series,COrderInfo &order)
