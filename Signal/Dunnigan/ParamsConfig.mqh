@@ -20,7 +20,6 @@ public:
    int               m_number_barras_maior;
    int               m_stop_loss;
    int               m_take_profit;
-   bool              m_entryWithConfirmation;
    bool              m_analisar1;
    bool              m_analisar2;
    int               m_amplitude_movimento;
@@ -34,7 +33,6 @@ public:
    void              SetTakeProfit(int value) {m_take_profit = value;}
    void              SetAmplitudeAlvos(int amplitude_alvos) {m_amplitude_alvos = amplitude_alvos;}
    void              SetStopLoss(int stop_loss) {m_stop_loss = stop_loss;}
-   void              SetEntryWithConfirmation(bool entryWithConfirmation) {m_entryWithConfirmation = entryWithConfirmation;}
    void              SetAnalisar1(bool analisar1) {m_analisar1 = analisar1;}
    void              SetAnalisar2(bool analisar2) {m_analisar2 = analisar2;}
    void              SetAmplitude_movimento(int amplitude_movimento) {m_amplitude_movimento = amplitude_movimento;}
