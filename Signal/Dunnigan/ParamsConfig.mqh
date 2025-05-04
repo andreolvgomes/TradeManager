@@ -21,6 +21,14 @@ public:
    int               m_take_profit;
    int               m_amplitude_movimento;
 
+   bool              m_AmplitudeDoMovimentoRules;
+   bool              m_AmplitudeAlvosRules;
+   bool              m_CandleMesmoDiaRules;
+   bool              m_CandleGatilhoMaiorQueAlvoRules;
+   bool              m_CandleGatilhoRompeuOsDoisLadosRules;
+   bool              m_AmplitudeDoMovimentoMaxBarsRules;
+   bool              m_AmplitudeAlvosMaxBarsRules;
+
    void              SetNumber_barras(int number_barras) {m_number_barras = number_barras;}
    void              SetLevel_stoploss(int level_stoploss) {m_level_stoploss = level_stoploss;}
    void              SetTakeProfit(int value) {m_take_profit = value;}
